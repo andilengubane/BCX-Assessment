@@ -1,42 +1,95 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
+   <head runat="server">
+   
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+       <title>Change Control</title>
+       <link href="../css/bootstrap.min.css" rel="stylesheet">
+       <link href="../font-awesome/css/font-awesome.css" rel="stylesheet" />
+       <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet" />
+       <link href="../js/plugins/gritter/jquery.gritter.css" rel="stylesheet" />
+       <link href="../css/animate.css" rel="stylesheet" />
+       <link href="../css/style.css" rel="stylesheet" />
+       <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+       <link href="~/Scripts/css/plugins/toastr/toastr.min.css" rel="stylesheet" />
+   
+   </head>
+   <body>
+       <div id="wrapper" class="container">
+           <nav class="navbar-default navbar-static-side" role="navigation">
+               <div class="sidebar-collapse">
+                   <ul class="nav metismenu" id="side-menu">
+                       <li class="nav-header">
+                           @*<div class="dropdown profile-element">
+                               <span>
+                                   <img runat="server" alt="image" class="img-container" src="~/img/download.png" style="width:180px" />
+                               </span>
+                               <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                   <span class="clear">
+                                       <span class="block m-t-xs">
+                                       </span>
+                                   </span>
+                               </a>
+                           </div>*@
+                           <div class="logo-element">
+                               ALTR
+                           </div>
+                       </li>
+                       <li>
+                           <a href="@Url.Action("Employee", "Home")"><i class="fa fa-tachometer"></i> <span class="nav-label">EMPLOYEES</span></a>
+                       </li>
+                       <li>
+                           <a href="@Url.Action("Task","Home")"><i class="fa fa-cubes"></i> <span class="nav-label">TASK</span></a>
+                       </li>
+                       <li>
+                           <a href="@Url.Action("Roles", "Home")"><i class="fa fa-cogs"></i> <span class="nav-label">ROLES</span></a>
+                       </li>
+                       <li>
+                           <a href="@Url.Action("Settings", "Home")"><i class="fa fa-cogs"></i> <span class="nav-label">SETTINGS</span></a>
+                       </li>
+                   </ul>
+               </div>
+           </nav>
+   
+           <div id="page-wrapper" class="gray-bg dashbard-1">
+               <form runat="server" id="form1">
+                   <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                       @RenderBody()
+                   </asp:ContentPlaceHolder>
+               </form>
+           </div>
+       </div>
+   
+       <script src="../js/jquery-3.1.1.min.js"></script>
+       <script src="../js/bootstrap.min.js"></script>
+       <script src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+       <script src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+   
+       <script src="../js/plugins/flot/jquery.flot.js"></script>
+       <script src="../js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+       <script src="../js/plugins/flot/jquery.flot.spline.js"></script>
+       <script src="../js/plugins/flot/jquery.flot.resize.js"></script>
+       <script src="../js/plugins/flot/jquery.flot.pie.js"></script>
+   
+       <script src="../js/plugins/peity/jquery.peity.min.js"></script>
+       <script src="../js/demo/peity-demo.js"></script>
+       <script src="../js/inspinia.js"></script>
+       <script src="../js/plugins/pace/pace.min.js"></script>
+       <script src="../js/plugins/jquery-ui/jquery-ui.min.js"></script>
+       <script src="../js/plugins/gritter/jquery.gritter.min.js"></script>
+       <script src="../js/plugins/sparkline/jquery.sparkline.min.js"></script>
+       <script src="../js/demo/sparkline-demo.js"></script>
+       <script src="../js/plugins/chartJs/Chart.min.js"></script>
+       <script src="../js/plugins/toastr/toastr.min.js"></script>
+       <script src="js/plugins/iCheck/icheck.min.js"></script>
+   
+       <div class="container">
+           <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+           </asp:ContentPlaceHolder>
+       </div>
+       @RenderSection("validation", false)
+       @RenderSection("scripts", false)
+   </body>
 </html>
