@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +50,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssignedTask.cs">
+      <DependentUpon>BcxConnexionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BcxConnexionModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BcxConnexionModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BcxConnexionModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BcxConnexionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BcxConnexionModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BcxConnexionModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataLocked.cs">
+      <DependentUpon>BcxConnexionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataLookUp.cs">
+      <DependentUpon>BcxConnexionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>BcxConnexionModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs">
+      <DependentUpon>BcxConnexionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Task.cs">
+      <DependentUpon>BcxConnexionModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="BcxConnexionModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BcxConnexionModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BcxConnexionModel.edmx.diagram">
+      <DependentUpon>BcxConnexionModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BcxConnexionModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BcxConnexionModel.edmx</DependentUpon>
+      <LastGenOutput>BcxConnexionModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BcxConnexionModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BcxConnexionModel.edmx</DependentUpon>
+      <LastGenOutput>BcxConnexionModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

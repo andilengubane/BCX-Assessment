@@ -246,6 +246,16 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessConnexion.DTO\BusinessConnexion.DTO.csproj">
+      <Project>{ef45a16f-d74a-4d87-9d67-2e433759a017}</Project>
+      <Name>BusinessConnexion.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessConnexion.Service\BusinessConnexion.Service.csproj">
+      <Project>{3095f943-40e5-47ce-891f-c4fb7181e850}</Project>
+      <Name>BusinessConnexion.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -43,5 +43,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessConnexion.DTO\BusinessConnexion.DTO.csproj">
+      <Project>{ef45a16f-d74a-4d87-9d67-2e433759a017}</Project>
+      <Name>BusinessConnexion.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessConnexion.EntityFrameWork\BusinessConnexion.EntityFrameWork.csproj">
+      <Project>{57b795b7-bb91-4956-86ef-5de457e3f092}</Project>
+      <Name>BusinessConnexion.EntityFrameWork</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
