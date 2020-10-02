@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BcxConnexionModelStoreContainer" CdmEntityContainer="BcxConnexionEntities">
+    <EntitySetMapping Name="AssignedTask">
+      <EntityTypeMapping TypeName="BcxConnexionModel.AssignedTask">
+        <MappingFragment StoreEntitySet="AssignedTask">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataLocked">
+      <EntityTypeMapping TypeName="BcxConnexionModel.DataLocked">
+        <MappingFragment StoreEntitySet="DataLocked">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataLookUp">
+      <EntityTypeMapping TypeName="BcxConnexionModel.DataLookUp">
+        <MappingFragment StoreEntitySet="DataLookUp">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataLockId" ColumnName="DataLockId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="BcxConnexionModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeLast" ColumnName="EmployeeLast" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
+          <ScalarProperty Name="GengerId" ColumnName="GengerId" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+          <ScalarProperty Name="RileId" ColumnName="RileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="BcxConnexionModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Task">
+      <EntityTypeMapping TypeName="BcxConnexionModel.Task">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

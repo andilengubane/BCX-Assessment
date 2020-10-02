@@ -1,0 +1,73 @@
+﻿@model BusinesConnexion.DTO.TaskDTO
+
+@section scripts{
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#DueDate").datepicker({
+                dateFormat: "yy-mm-dd",
+                minDate: +0,
+                changeYear: true
+            });
+        });
+    </script>
+
+}
+
+<div class="row border-bottom">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <span class="m-r-sm text-muted welcome-message"> </span>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                </a>
+            </li>
+        </ul>
+        <br />
+    </nav>
+</div>
+
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>TASK</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">TASK</label>
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", id = "Name", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="description">DESCRIPTION</label>
+                            @Html.TextBoxFor(m => m.Description, new { @class = "form-control", id = "Description", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="description">DUE DATE</label>
+                            @Html.TextBoxFor(m => m.DueDate, new { @class = "form-control", id = "DueDate", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.DueDate, "", new { @class = "text-danger" })
+                        </div>
+                        <button type="submit" id="alert-target" class="btn btn-primary" onclick="saveJobCategory()">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

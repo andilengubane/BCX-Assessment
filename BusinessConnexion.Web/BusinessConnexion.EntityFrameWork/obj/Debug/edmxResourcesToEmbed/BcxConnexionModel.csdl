@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BcxConnexionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AssignedTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="TaskId" Type="Int32" />
+    <Property Name="DateLogged" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__AssignedT__Emplo__21B6055D" FromRole="AssignedTask" ToRole="Employee" />
+    <NavigationProperty Name="Task" Relationship="Self.FK__AssignedT__TaskI__22AA2996" FromRole="AssignedTask" ToRole="Task" />
+  </EntityType>
+  <EntityType Name="DataLocked">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DateLogged" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="DataLookUp" Relationship="Self.FK__DataLookU__DataL__1367E606" FromRole="DataLocked" ToRole="DataLookUp" />
+  </EntityType>
+  <EntityType Name="DataLookUp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataLockId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DateLogged" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="DataLocked" Relationship="Self.FK__DataLookU__DataL__1367E606" FromRole="DataLookUp" ToRole="DataLocked" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Employee__Genger__1A14E395" FromRole="DataLookUp" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeLast" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="IdNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+    <Property Name="GengerId" Type="Int32" />
+    <Property Name="DateLogged" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RileId" Type="Int32" />
+    <NavigationProperty Name="AssignedTask" Relationship="Self.FK__AssignedT__Emplo__21B6055D" FromRole="Employee" ToRole="AssignedTask" />
+    <NavigationProperty Name="DataLookUp" Relationship="Self.FK__Employee__Genger__1A14E395" FromRole="Employee" ToRole="DataLookUp" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__Employee__RileId__1ED998B2" FromRole="Employee" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateLogged" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Employee__RileId__1ED998B2" FromRole="Role" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateLogged" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="AssignedTask" Relationship="Self.FK__AssignedT__TaskI__22AA2996" FromRole="Task" ToRole="AssignedTask" />
+  </EntityType>
+  <Association Name="FK__AssignedT__Emplo__21B6055D">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="AssignedTask" Type="Self.AssignedTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssignedTask">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AssignedT__TaskI__22AA2996">
+    <End Role="Task" Type="Self.Task" Multiplicity="0..1" />
+    <End Role="AssignedTask" Type="Self.AssignedTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssignedTask">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DataLookU__DataL__1367E606">
+    <End Role="DataLocked" Type="Self.DataLocked" Multiplicity="0..1" />
+    <End Role="DataLookUp" Type="Self.DataLookUp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataLocked">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DataLookUp">
+        <PropertyRef Name="DataLockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Genger__1A14E395">
+    <End Role="DataLookUp" Type="Self.DataLookUp" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataLookUp">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="GengerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__RileId__1ED998B2">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="RileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BcxConnexionEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AssignedTask" EntityType="Self.AssignedTask" />
+    <EntitySet Name="DataLocked" EntityType="Self.DataLocked" />
+    <EntitySet Name="DataLookUp" EntityType="Self.DataLookUp" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="Role" EntityType="Self.Role" />
+    <EntitySet Name="Task" EntityType="Self.Task" />
+    <AssociationSet Name="FK__AssignedT__Emplo__21B6055D" Association="Self.FK__AssignedT__Emplo__21B6055D">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="AssignedTask" EntitySet="AssignedTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AssignedT__TaskI__22AA2996" Association="Self.FK__AssignedT__TaskI__22AA2996">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="AssignedTask" EntitySet="AssignedTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DataLookU__DataL__1367E606" Association="Self.FK__DataLookU__DataL__1367E606">
+      <End Role="DataLocked" EntitySet="DataLocked" />
+      <End Role="DataLookUp" EntitySet="DataLookUp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Genger__1A14E395" Association="Self.FK__Employee__Genger__1A14E395">
+      <End Role="DataLookUp" EntitySet="DataLookUp" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__RileId__1ED998B2" Association="Self.FK__Employee__RileId__1ED998B2">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

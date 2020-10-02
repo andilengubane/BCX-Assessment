@@ -122,7 +122,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1172,6 +1175,14 @@
     <Content Include="Views\Home\Task.cshtml" />
     <Content Include="Views\Home\Settings.cshtml" />
     <Content Include="Views\Home\Roles.cshtml" />
+    <Content Include="Views\Employee\CreateEmployee.cshtml" />
+    <Content Include="Views\Employee\EditEmployee.cshtml" />
+    <Content Include="Views\Employee\AssignTask.cshtml" />
+    <Content Include="Views\Employee\TaskList.cshtml" />
+    <Content Include="Views\Task\CreateTask.cshtml" />
+    <Content Include="Views\Task\EditTask.cshtml" />
+    <Content Include="Views\Role\EditRole.cshtml" />
+    <Content Include="Views\Role\CreateRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1270,6 +1281,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinesConnexion.DTO\BusinesConnexion.DTO.csproj">
+      <Project>{28fd93ec-92cc-42fa-823c-1c6cf43bfd53}</Project>
+      <Name>BusinesConnexion.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

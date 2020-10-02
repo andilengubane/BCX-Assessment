@@ -1,0 +1,69 @@
+﻿@model BusinesConnexion.DTO.RoleDTO
+
+
+
+<div class="row border-bottom">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <span class="m-r-sm text-muted welcome-message"> </span>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="modal-dialog" style="width:1000px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModal-label">UPDATE ROLE</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row border-bottom">
+                        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                            <div class="navbar-header">
+                                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                            </div>
+                            <ul class="nav navbar-top-links navbar-right">
+                                <li>
+                                    <span class="m-r-sm text-muted welcome-message"> </span>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <br />
+                        <form>
+                            <div class="form-group">
+                                <label for="name">ROLE</label>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", id = "Name", autocomplete = "off" })
+                                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label for="description">DESCRIPTION</label>
+                                @Html.TextBoxFor(m => m.Description, new { @class = "form-control", id = "Description", autocomplete = "off" })
+                                @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="alert-target" class="btn btn-primary" onclick="saveJobCategory()">SUBMIT</button>
+                        <button class="btn btn-primary" data-dismiss="modal" id="btnCancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

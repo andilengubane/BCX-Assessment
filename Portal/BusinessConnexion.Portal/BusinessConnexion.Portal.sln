@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessConnexion.Portal", "BusinessConnexion.Portal\BusinessConnexion.Portal.csproj", "{BC156A00-F741-417A-B16D-C3C51E283140}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinesConnexion.DTO", "BusinesConnexion.DTO\BusinesConnexion.DTO.csproj", "{28FD93EC-92CC-42FA-823C-1C6CF43BFD53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BC156A00-F741-417A-B16D-C3C51E283140}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC156A00-F741-417A-B16D-C3C51E283140}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC156A00-F741-417A-B16D-C3C51E283140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28FD93EC-92CC-42FA-823C-1C6CF43BFD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28FD93EC-92CC-42FA-823C-1C6CF43BFD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28FD93EC-92CC-42FA-823C-1C6CF43BFD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28FD93EC-92CC-42FA-823C-1C6CF43BFD53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

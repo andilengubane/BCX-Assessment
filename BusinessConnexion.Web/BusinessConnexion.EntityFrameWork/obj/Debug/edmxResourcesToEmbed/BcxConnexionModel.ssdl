@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BcxConnexionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AssignedTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" />
+    <Property Name="TaskId" Type="int" />
+    <Property Name="DateLogged" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataLocked">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+    <Property Name="DateLogged" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataLookUp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataLockId" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+    <Property Name="DateLogged" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="250" />
+    <Property Name="EmployeeLast" Type="varchar" MaxLength="250" />
+    <Property Name="PhoneNumber" Type="char" MaxLength="10" />
+    <Property Name="IdNumber" Type="char" MaxLength="13" />
+    <Property Name="GengerId" Type="int" />
+    <Property Name="DateLogged" Type="datetime" Nullable="false" />
+    <Property Name="RileId" Type="int" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="DateLogged" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="DateLogged" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__AssignedT__Emplo__21B6055D">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="AssignedTask" Type="Self.AssignedTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssignedTask">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AssignedT__TaskI__22AA2996">
+    <End Role="Task" Type="Self.Task" Multiplicity="0..1" />
+    <End Role="AssignedTask" Type="Self.AssignedTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssignedTask">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DataLookU__DataL__1367E606">
+    <End Role="DataLocked" Type="Self.DataLocked" Multiplicity="0..1" />
+    <End Role="DataLookUp" Type="Self.DataLookUp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataLocked">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DataLookUp">
+        <PropertyRef Name="DataLockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Genger__1A14E395">
+    <End Role="DataLookUp" Type="Self.DataLookUp" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataLookUp">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="GengerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__RileId__1ED998B2">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="RileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BcxConnexionModelStoreContainer">
+    <EntitySet Name="AssignedTask" EntityType="Self.AssignedTask" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DataLocked" EntityType="Self.DataLocked" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DataLookUp" EntityType="Self.DataLookUp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__AssignedT__Emplo__21B6055D" Association="Self.FK__AssignedT__Emplo__21B6055D">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="AssignedTask" EntitySet="AssignedTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AssignedT__TaskI__22AA2996" Association="Self.FK__AssignedT__TaskI__22AA2996">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="AssignedTask" EntitySet="AssignedTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DataLookU__DataL__1367E606" Association="Self.FK__DataLookU__DataL__1367E606">
+      <End Role="DataLocked" EntitySet="DataLocked" />
+      <End Role="DataLookUp" EntitySet="DataLookUp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Genger__1A14E395" Association="Self.FK__Employee__Genger__1A14E395">
+      <End Role="DataLookUp" EntitySet="DataLookUp" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__RileId__1ED998B2" Association="Self.FK__Employee__RileId__1ED998B2">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

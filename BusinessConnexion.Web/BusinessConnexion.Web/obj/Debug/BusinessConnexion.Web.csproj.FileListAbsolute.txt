@@ -1,0 +1,2 @@
+C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Web\obj\Debug\BusinessConnexion.Web.csprojAssemblyReference.cache
+C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Web\obj\Debug\BusinessConnexion.Web.csproj.CoreCompileInputs.cache

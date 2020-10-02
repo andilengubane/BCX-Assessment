@@ -27,7 +27,6 @@ namespace BusinessConnexion.Portal.Controllers
             return View();
         }
 
-
         public ActionResult Settings()
         {
             ViewBag.Message = "Your contact page.";

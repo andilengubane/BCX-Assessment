@@ -74,3 +74,5 @@ C:\Development\BcxAssement\Portal\BusinessConnexion.Portal\BusinessConnexion.Por
 C:\Development\BcxAssement\Portal\BusinessConnexion.Portal\BusinessConnexion.Portal\obj\Debug\BusinessConnexion.Portal.csproj.CopyComplete
 C:\Development\BcxAssement\Portal\BusinessConnexion.Portal\BusinessConnexion.Portal\obj\Debug\BusinessConnexion.Portal.dll
 C:\Development\BcxAssement\Portal\BusinessConnexion.Portal\BusinessConnexion.Portal\obj\Debug\BusinessConnexion.Portal.pdb
+C:\Development\BcxAssement\Portal\BusinessConnexion.Portal\BusinessConnexion.Portal\bin\BusinesConnexion.DTO.dll
+C:\Development\BcxAssement\Portal\BusinessConnexion.Portal\BusinessConnexion.Portal\bin\BusinesConnexion.DTO.pdb
