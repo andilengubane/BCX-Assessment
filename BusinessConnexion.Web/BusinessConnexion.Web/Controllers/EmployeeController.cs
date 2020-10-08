@@ -30,8 +30,7 @@ namespace BusinessConnexion.Web.Controllers
         {
             if (!String.IsNullOrEmpty(employee.IdNumber))
             {
-                //EmployeeService.SaveEmployee(employeeDTO);
-                //EmailService.SendEmployeeNofication(employeeDTO, $"{employeeDTO.FirstName}.{employeeDTO.LastName}@altron.com");
+                EmployeeService.AddEmployee(employee);
                 return "Employee Added Succefully";
             }
             return "Something went adding employe Id number was not provided";

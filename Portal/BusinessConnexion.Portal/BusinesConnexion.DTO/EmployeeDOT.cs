@@ -7,7 +7,7 @@ namespace BusinesConnexion.DTO
     public class EmployeeDOT
     {
         public int Id { get; set; }
-        public int GengerId { get; set; }
+        public int GenderId { get; set; }
         public int RileId { get; set; }
         public string EmployeeName { get; set; }
         public string EmployeeLast { get; set; }

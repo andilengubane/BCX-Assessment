@@ -40,7 +40,7 @@
     <Property Name="EmployeeLast" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
     <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <Property Name="IdNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
-    <Property Name="GengerId" Type="Int32" />
+    <Property Name="GenderId" Type="Int32" />
     <Property Name="DateLogged" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="RileId" Type="Int32" />
     <NavigationProperty Name="AssignedTask" Relationship="Self.FK__AssignedT__Emplo__21B6055D" FromRole="Employee" ToRole="AssignedTask" />
@@ -111,7 +111,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Employee">
-        <PropertyRef Name="GengerId" />
+        <PropertyRef Name="GenderId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

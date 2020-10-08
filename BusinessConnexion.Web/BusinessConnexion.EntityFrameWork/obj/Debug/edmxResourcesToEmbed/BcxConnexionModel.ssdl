@@ -35,7 +35,7 @@
     <Property Name="EmployeeLast" Type="varchar" MaxLength="250" />
     <Property Name="PhoneNumber" Type="char" MaxLength="10" />
     <Property Name="IdNumber" Type="char" MaxLength="13" />
-    <Property Name="GengerId" Type="int" />
+    <Property Name="GenderId" Type="int" />
     <Property Name="DateLogged" Type="datetime" Nullable="false" />
     <Property Name="RileId" Type="int" />
   </EntityType>
@@ -101,7 +101,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Employee">
-        <PropertyRef Name="GengerId" />
+        <PropertyRef Name="GenderId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

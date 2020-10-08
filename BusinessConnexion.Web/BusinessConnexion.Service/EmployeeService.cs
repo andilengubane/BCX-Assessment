@@ -8,18 +8,31 @@ using BusinessConnexion.EntityFrameWork;
 
 namespace BusinessConnexion.Service
 {
-    class EmployeeService
+    public class EmployeeService
     {
         private readonly static BcxConnexionEntities context = new BcxConnexionEntities();
-        //public static List<EmployeeDTO> GetAllEmployeeDetails(string employeeCode, string employeeFullName)
-        //{
-        //    List<EmployeeDTO> data = context.GetAllEmployeeDetails(employeeCode, employeeFullName).Select(x => new EmployeeDTO
-        //    {
-        //        Id = x.Id,
-        //        Gender = x.Gender,
-        //    }).ToList();
-        //    return data;
-        //}
+        public static List<EmployeeDTO> GetAllEmployeeDetails(string employeeCode, string employeeFullName)
+        {
+           
+        }
+
+        public static void AddEmployee(EmployeeDTO employee)
+        {
+            if (employee.Id == 0)
+            {
+                context.Employee.Add(new Employee
+                {
+                    EmployeeName = employee.EmployeeName,
+                    EmployeeLast = employee.EmployeeLast,
+                    PhoneNumber = employee.PhoneNumber,
+                    IdNumber = employee.IdNumber,
+                    GenderId = employee.GenderId,
+                    RileId = employee.RileId,
+                    DateLogged = DateTime.Now
+                });
+                context.SaveChanges();
+            }
+        }
 
         public static void EditEmployee(int employeeId, EmployeeDTO employeeData)
         {
@@ -29,7 +42,6 @@ namespace BusinessConnexion.Service
                 var data = context.Employee.Find(employeeId);
                 data.Id = employeeData.Id;
                 context.SaveChanges();
-
             }
         }
 

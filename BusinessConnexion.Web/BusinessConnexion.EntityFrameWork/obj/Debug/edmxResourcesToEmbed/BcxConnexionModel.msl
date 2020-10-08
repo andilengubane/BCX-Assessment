@@ -38,7 +38,7 @@
           <ScalarProperty Name="EmployeeLast" ColumnName="EmployeeLast" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
-          <ScalarProperty Name="GengerId" ColumnName="GengerId" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
           <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
           <ScalarProperty Name="RileId" ColumnName="RileId" />
         </MappingFragment>

@@ -2,23 +2,23 @@
 using System.Net.Http;
 using System.Web.Mvc;
 using BusinesConnexion.DTO;
+using Newtonsoft.Json;
 
 namespace BusinessConnexion.Portal.Controllers
 {
     public class EmployeeController : Controller
     {
-        // GET: Employee
+        
         public ActionResult Index()
         {
             return View();
         }
-        // GET: Employee
+       
         public ActionResult CreateEmployee()
         {
             return View();
         }
 
-        // GET: Employee
         public ActionResult EditEmployee(int Id)
         {
             return PartialView();
@@ -32,26 +32,23 @@ namespace BusinessConnexion.Portal.Controllers
             return PartialView();
         }
 
-        public static void AddEmployee(EmployeeDOT employee)
+        public ActionResult AddEmployee(EmployeeDOT employee)
         {
-            var baseUrl = "";
             using (var http = new HttpClient())
             {
-                //var content = new StringContent(JsonConvert.SerializeObject(data));
-                //content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                //var request = http.PostAsync($"{baseUrl}", content);
-                //var response = request.Result.Content.ReadAsStringAsync().Result;
+                var baseUrl = "http://localhost:53308//api/Employee/AddEmployee";
+                var content = new StringContent(JsonConvert.SerializeObject(employee));
+                var request = http.PostAsync($"{baseUrl}", content);
+                request.Wait();
 
-                //if (collectionOutputDTO.Status != null)
-                //{
-                //    return $"Status: { collectionOutputDTO.Status}, Description:{ collectionOutputDTO.Description }, ResultCode: { collectionOutputDTO.ResultCode }, Date: { collectionOutputDTO.Date }";
-                //}
-                //else
-                //{
-                //    var errorMessage = "Unable to create subscription";
-                //    return errorMessage;
-                //}
+                var result = request.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Employee");
+                }
             }
+            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+            return View(employee);
         }
     }
 }

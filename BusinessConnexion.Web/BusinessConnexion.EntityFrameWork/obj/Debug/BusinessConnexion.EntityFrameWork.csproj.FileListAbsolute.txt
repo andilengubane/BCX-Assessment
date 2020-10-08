@@ -9,3 +9,4 @@ C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWo
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\obj\Debug\BusinessConnexion.EntityFrameWork.csproj.CopyComplete
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\obj\Debug\BusinessConnexion.EntityFrameWork.dll
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\obj\Debug\BusinessConnexion.EntityFrameWork.pdb
+C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\obj\Debug\BusinessConnexion.EntityFrameWork.csprojAssemblyReference.cache

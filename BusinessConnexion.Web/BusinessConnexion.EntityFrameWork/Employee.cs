@@ -25,7 +25,7 @@ namespace BusinessConnexion.EntityFrameWork
         public string EmployeeLast { get; set; }
         public string PhoneNumber { get; set; }
         public string IdNumber { get; set; }
-        public Nullable<int> GengerId { get; set; }
+        public Nullable<int> GenderId { get; set; }
         public System.DateTime DateLogged { get; set; }
         public Nullable<int> RileId { get; set; }
     
