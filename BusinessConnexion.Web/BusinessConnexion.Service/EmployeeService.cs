@@ -11,10 +11,10 @@ namespace BusinessConnexion.Service
     public class EmployeeService
     {
         private readonly static BcxConnexionEntities context = new BcxConnexionEntities();
-        public static List<EmployeeDTO> GetAllEmployeeDetails(string employeeCode, string employeeFullName)
-        {
+        //public static List<EmployeeDTO> GetAllEmployeeDetails(string employeeCode, string employeeFullName)
+        //{
            
-        }
+        //}
 
         public static void AddEmployee(EmployeeDTO employee)
         {

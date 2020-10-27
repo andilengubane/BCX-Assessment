@@ -5,8 +5,8 @@ C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWo
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\bin\Debug\EntityFramework.SqlServer.dll
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\bin\Debug\EntityFramework.xml
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\bin\Debug\EntityFramework.SqlServer.xml
+C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\obj\Debug\BusinessConnexion.EntityFrameWork.csprojAssemblyReference.cache
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\obj\Debug\BusinessConnexion.EntityFrameWork.csproj.CoreCompileInputs.cache
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\obj\Debug\BusinessConnexion.EntityFrameWork.csproj.CopyComplete
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\obj\Debug\BusinessConnexion.EntityFrameWork.dll
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\obj\Debug\BusinessConnexion.EntityFrameWork.pdb
-C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.EntityFrameWork\obj\Debug\BusinessConnexion.EntityFrameWork.csprojAssemblyReference.cache

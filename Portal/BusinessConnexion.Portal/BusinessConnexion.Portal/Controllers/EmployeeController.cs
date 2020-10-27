@@ -8,12 +8,12 @@ namespace BusinessConnexion.Portal.Controllers
 {
     public class EmployeeController : Controller
     {
-        
+
         public ActionResult Index()
         {
             return View();
         }
-       
+
         public ActionResult CreateEmployee()
         {
             return View();
@@ -45,6 +45,27 @@ namespace BusinessConnexion.Portal.Controllers
                 if (result.IsSuccessStatusCode)
                 {
                     return RedirectToAction("Employee");
+                }
+            }
+            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+            return View(employee);
+        }
+
+        public ActionResult Update(EmployeeDOT employee)
+        {
+            if (employee.Id > 0) {
+                using (var http = new HttpClient())
+                {
+                    var baseUrl = "http://localhost:53308//api/Employee/EditEmployee";
+                    var content = new StringContent(JsonConvert.SerializeObject(employee));
+                    var request = http.PostAsync($"{baseUrl}", content);
+                    request.Wait();
+
+                    var result = request.Result;
+                    if (result.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Employee");
+                    }
                 }
             }
             ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");

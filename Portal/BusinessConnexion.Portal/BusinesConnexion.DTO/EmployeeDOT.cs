@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusinesConnexion.DTO
 {
@@ -9,6 +11,7 @@ namespace BusinesConnexion.DTO
         public int Id { get; set; }
         public int GenderId { get; set; }
         public int RileId { get; set; }
+        [Required]
         public string EmployeeName { get; set; }
         public string EmployeeLast { get; set; }
         public string PhoneNumber { get; set; }

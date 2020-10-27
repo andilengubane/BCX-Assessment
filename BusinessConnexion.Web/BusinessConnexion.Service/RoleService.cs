@@ -1,7 +1,9 @@
 ﻿
 using System;
-using System.Threading.Tasks;
+using System.Linq;
+using System.Web.Mvc;
 using BusinessConnexion.DTO;
+using System.Collections.Generic;
 using BusinessConnexion.EntityFrameWork;
 
 namespace BusinessConnexion.Service
@@ -9,7 +11,17 @@ namespace BusinessConnexion.Service
     public class RoleService
     {
         private readonly static BcxConnexionEntities context = new BcxConnexionEntities();
-        public static void AddEmployee(RoleDTO role)
+        public static IEnumerable<SelectListItem> GetTask()
+        {
+            var query = context.Role.Select(x => new SelectListItem
+            {
+                Value = x.Id.ToString(),
+                Text = x.Name
+            });
+            return new SelectList(query, "Value", "Text");
+        }
+
+        public static void AddRole(RoleDTO role)
         {
             if (role.Id == 0)
             {

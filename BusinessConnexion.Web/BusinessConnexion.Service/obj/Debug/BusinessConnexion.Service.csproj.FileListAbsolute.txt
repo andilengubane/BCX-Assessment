@@ -1,5 +1,3 @@
-C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\obj\Debug\BusinessConnexion.Service.csprojAssemblyReference.cache
-C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\obj\Debug\BusinessConnexion.Service.csproj.CoreCompileInputs.cache
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\bin\Debug\BusinessConnexion.Service.dll.config
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\bin\Debug\BusinessConnexion.Service.dll
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\bin\Debug\BusinessConnexion.Service.pdb
@@ -23,6 +21,8 @@ C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\bin\D
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\bin\Debug\System.Web.Razor.xml
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\obj\Debug\BusinessConnexion.Service.csprojAssemblyReference.cache
+C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\obj\Debug\BusinessConnexion.Service.csproj.CoreCompileInputs.cache
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\obj\Debug\BusinessConnexion.Service.csproj.CopyComplete
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\obj\Debug\BusinessConnexion.Service.dll
 C:\Development\BcxAssement\BusinessConnexion.Web\BusinessConnexion.Service\obj\Debug\BusinessConnexion.Service.pdb
